@@ -8,4 +8,6 @@ services:
     tty: true # docker run -t
     command: /bin/sh
     volumes:
-      - ./cli:/usr/src/app/
+      - ./cli:/usr/src/app
+    env_file:
+      - ./.env

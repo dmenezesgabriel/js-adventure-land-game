@@ -7,5 +7,7 @@
   "scripts": {
     "start": "node main.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "8.2.0"
+  }
 }
