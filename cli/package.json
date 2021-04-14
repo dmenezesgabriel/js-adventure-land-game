@@ -1,5 +1,6 @@
 {
   "name": "adventure_cli",
+  "type": "module",
   "version": "0.0.0",
   "description": "adventure_cli",
   "author": "Gabriel Menezes dmenezes.gabriel@gmail.com",
@@ -8,6 +9,7 @@
     "start": "node main.js"
   },
   "dependencies": {
-    "dotenv": "8.2.0"
+    "dotenv": "8.2.0",
+    "axios": "0.21.1"
   }
 }

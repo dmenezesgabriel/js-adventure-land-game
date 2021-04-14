@@ -1,15 +1,11 @@
-require("dotenv").config();
-// console.log(process.env.LOGIN);
+import dotenv from "dotenv";
+import User from "./src/auth.js";
 
-// Auth
-class User {
-  constructor(login, password) {
-    this.login = login;
-    this.password = password;
-    this.sessionCookie = "";
-  }
+dotenv.config();
 
-  setSession(session) {
-    this.sessionCookie = session;
-  }
-}
+const email = process.env.EMAIL;
+const password = process.env.PASSWORD;
+
+let user = new User(email, password);
+
+user.getSession();
