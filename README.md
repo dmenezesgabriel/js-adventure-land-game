@@ -27,6 +27,15 @@ Discord is the place where you can find most of the active players, it's also th
 - The majority of the game functions can and should be accomplished by code. You can do this clicking the tab on the top right corner that says _CODE_;
 - Do the beginner Tutorial at the start of the game;
 
+## Terminal clients
+
+- [tcal](https://github.com/qysp/tcal)
+- [ALBot](https://github.com/NexusNull/ALBot/tree/master/app)
+
+## Docs
+
+- [Developer Github](https://github.com/kaansoral/adventureland)
+
 ## References
 
 - [Nice docs found on Reddit](https://docs.google.com/document/d/18xG9NaO1mm7cSx7wMIQEtrkGzFHo6WrEE_TZcbeAFnA/edit)
