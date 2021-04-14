@@ -1,0 +1,11 @@
+{
+  "name": "adventure_cli",
+  "version": "0.0.0",
+  "description": "adventure_cli",
+  "author": "Gabriel Menezes dmenezes.gabriel@gmail.com",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {}
+}

@@ -30,7 +30,7 @@ Discord is the place where you can find most of the active players, it's also th
 ## Terminal clients
 
 - [tcal](https://github.com/qysp/tcal)
-- [ALBot](https://github.com/NexusNull/ALBot/tree/master/app)
+- [ALBot](https://github.com/NexusNull/ALBot/tree/master/)
 
 ## Docs
 

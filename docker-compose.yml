@@ -1,0 +1,11 @@
+version: "3"
+services:
+  adventure-cli:
+    build:
+      context: ./cli
+      dockerfile: Dockerfile
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    command: /bin/sh
+    volumes:
+      - ./cli:/usr/src/app/
