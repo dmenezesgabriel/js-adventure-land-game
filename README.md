@@ -12,7 +12,7 @@ Scripts and such to https://adventure.land in game usage
 ## Clients
 
 - [Browser](https://adventure.land/)
-- [Mobile Browser](https://adventure.land/comm)
+- [Browser - Companion](https://adventure.land/comm)
 - [Steam - Windows, Linux and MacOs]()
 
 ## Community
