@@ -8,4 +8,4 @@ const password = process.env.PASSWORD;
 
 let user = new User(email, password);
 
-user.getSession();
+await user.getSession();
