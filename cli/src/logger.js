@@ -3,10 +3,10 @@ import winston from "winston";
 const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.colorize(),
-    winston.format.timestamp(),
+    winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
     winston.format.align(),
     winston.format.printf(
-      (info) => `${info.timestamp} ${info.level}: ${info.message}`
+      (info) => `[ ${info.timestamp} ]  ${info.level}: ${info.message}`
     )
   ),
   level: "info",
