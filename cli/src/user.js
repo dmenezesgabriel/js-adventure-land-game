@@ -7,6 +7,7 @@ export default class User {
     this.password = password;
     this.sessionCookie = "";
     this.userId = "";
+    this.characters = {};
   }
 
   setSession(session) {
@@ -53,5 +54,25 @@ export default class User {
       console.error(loginResponse.data);
       return Promise.reject();
     }
+  }
+
+  async getCharacters() {
+    if (!this.userId) return Promise.reject("You must login first.");
+    console.info(`Getting Characters`);
+    const charactersResponse = await api.post(
+      "servers_and_characters",
+      "method=servers_and_characters&arguments={}",
+      { headers: { cookie: `auth=${this.sessionCookie}-${this.userId}` } }
+    );
+    if (charactersResponse.status == 200) {
+      for (const characterData of charactersResponse.data[0].characters) {
+        this.characters[characterData.name] = characterData;
+      }
+      return Promise.resolve(true);
+    } else {
+      console.error(charactersResponse);
+    }
+
+    return Promisse.reject("Error fetching characters");
   }
 }

@@ -1,5 +1,9 @@
 # Python to Javascript
 
+## var, let or const?
+
+## Promisses
+
 ## Classes
 
 - **constructor**: Same as `__init__`
