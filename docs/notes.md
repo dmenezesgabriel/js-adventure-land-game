@@ -1,8 +1,8 @@
-# Python to Javascript
+# Notes
 
 ## var, let or const?
 
-## Promisses
+## Promises
 
 ## Classes
 
