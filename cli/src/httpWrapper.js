@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const api = axios.create({
+const httpWrapper = axios.create({
   baseURL: "https://adventure.land/api/",
 });
 
-export default api;
+export default httpWrapper;

@@ -1,4 +1,4 @@
-import api from "./api.js";
+import httpWrapper from "./httpWrapper.js";
 
 export default class Game {
   constructor(sessionCookie, userId) {
@@ -10,7 +10,7 @@ export default class Game {
   async getServers() {
     if (!this.userId) return Promise.reject("You must login first.");
     console.info(`Getting Servers`);
-    const serversResponse = await api.post(
+    const serversResponse = await httpWrapper.post(
       "servers_and_characters",
       "method=servers_and_characters&arguments={}",
       { headers: { cookie: `auth=${this.sessionCookie}-${this.userId}` } }
