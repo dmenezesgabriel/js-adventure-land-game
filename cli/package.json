@@ -13,6 +13,7 @@
     "axios": "0.21.1",
     "winston": "3.3.3",
     "socket.io-client": "4.0.1",
-    "jsdom": "16.5.3"
+    "jsdom": "16.5.3",
+    "playwright": "1.10.0"
   }
 }

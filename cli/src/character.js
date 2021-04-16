@@ -1,6 +1,6 @@
 //  Todo figure it out how to use Sockets
 
-import io from "socket.io-client";
+import socketio from "socket.io-client";
 export default class Character {
   constructor(serverData, characterId, userId, sessionCookie) {
     this.serverRegion = serverData.region;
@@ -16,7 +16,7 @@ export default class Character {
   async connect() {
     console.debug(`Connecting to ${this.serverRegion}:${this.serverName}...`);
     console.debug(`Connecting to ${this.serverAddr}:${this.serverPort}...`);
-    this.socket = io(`wss://${this.serverAddr}:${this.serverPort}`, {
+    this.socket = socketio(`wss://${this.serverAddr}:${this.serverPort}`, {
       secure: true,
       transports: ["websocket"],
     });
@@ -31,8 +31,8 @@ export default class Character {
 
     socket.emit("loaded", {
       success: 1,
-      width: 1920,
-      height: 1080,
+      width: 1366,
+      height: 768,
       scale: 10,
     });
     socket.emit("auth", {
