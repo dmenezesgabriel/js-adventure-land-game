@@ -13,7 +13,7 @@ export default class Game {
     const serversResponse = await httpWrapper.post(
       "servers_and_characters",
       "method=servers_and_characters&arguments={}",
-      { headers: { cookie: `auth=${this.sessionCookie}-${this.userId}` } }
+      { headers: { cookie: `auth=${this.userId}-${this.sessionCookie}` } }
     );
     if (serversResponse.status == 200) {
       for (const characterData of serversResponse.data[0].servers) {

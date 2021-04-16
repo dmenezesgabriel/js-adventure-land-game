@@ -40,8 +40,8 @@ export default class User {
         const result = /^auth=(.+?);/.exec(cookie);
         if (result) {
           // Save Session
-          this.setSession(result[1].split("-")[0]);
-          this.setUserId(result[1].split("-")[1]);
+          this.setUserId(result[1].split("-")[0]);
+          this.setSession(result[1].split("-")[1]);
           break;
         }
       }
@@ -62,7 +62,7 @@ export default class User {
     const charactersResponse = await httpWrapper.post(
       "servers_and_characters",
       "method=servers_and_characters&arguments={}",
-      { headers: { cookie: `auth=${this.sessionCookie}-${this.userId}` } }
+      { headers: { cookie: `auth=${this.userId}-${this.sessionCookie}` } }
     );
     if (charactersResponse.status == 200) {
       for (const characterData of charactersResponse.data[0].characters) {

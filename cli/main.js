@@ -23,15 +23,18 @@ logger.info("Getting characters");
 await game.getServers();
 // console.log(game.servers);
 
+const targetServer = game.servers["III"];
+const targetCharacter = user.characters["Pumafang"]["id"];
+const userId = user.userId;
+const sessionCookie = user.sessionCookie;
+
 logger.info("Connecting character");
+
 let character = new Character(
-  game.servers["III"],
-  user.characters["Pumafang"]["id"],
-  user.userId,
-  user.sessionCookie
+  targetServer,
+  targetCharacter,
+  userId,
+  sessionCookie
 );
 logger.info("Connecting character");
 character.connect();
-
-// logger.info("Disconnecting from server");
-// server.disconnect();
