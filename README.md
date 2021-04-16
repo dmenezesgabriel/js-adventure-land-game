@@ -26,6 +26,7 @@ Discord is the place where you can find most of the active players, it's also th
 - Not different of most RPGs _mages_ and _warriors_ are the easiest `classes` to start;
 - The majority of the game functions can and should be accomplished by code. You can do this clicking the tab on the top right corner that says _CODE_;
 - Do the beginner Tutorial at the start of the game;
+- You can also serve your code via `Gitub Pages`
 
 ## Terminal clients
 

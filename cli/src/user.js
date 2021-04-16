@@ -75,4 +75,6 @@ export default class User {
 
     return Promisse.reject("Error fetching characters");
   }
+
+  async postCode() {}
 }

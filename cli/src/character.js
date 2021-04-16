@@ -1,11 +1,11 @@
 import Server from "./server.js";
 
-export default class Character extends Server {
-  constructor(characterId, userId, sessionCookie, serverData) {
-    super(serverData);
+export default class Character {
+  constructor(characterId, userId, sessionCookie, socket) {
     this.characterId = characterId;
     this.userId = userId;
     this.sessionCookie = sessionCookie;
+    this.socket = socket;
   }
   // Connect
   // Disconnect

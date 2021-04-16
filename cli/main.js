@@ -29,15 +29,14 @@ let currentServer = game.servers["III"];
 logger.info("Connecting to server");
 const server = new Server(currentServer);
 server.connect();
-
-let character = new Character(
-  user.characters["Pumafang"]["id"],
-  user.userId,
-  user.sessionCookie,
-  currentServer
-);
-logger.info("Connecting character");
-character.connect();
+// let character = new Character(
+//   user.characters["Pumafang"]["id"],
+//   user.userId,
+//   user.sessionCookie,
+//   currentServer.socket
+// );
+// logger.info("Connecting character");
+// character.connect();
 
 // logger.info("Disconnecting from server");
-// server.disconnect();
+server.disconnect();
