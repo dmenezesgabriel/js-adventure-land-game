@@ -6,7 +6,8 @@
   "author": "Gabriel Menezes dmenezes.gabriel@gmail.com",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "emulator": "node emulator.js",
+    "main": "node main.js"
   },
   "dependencies": {
     "dotenv": "8.2.0",

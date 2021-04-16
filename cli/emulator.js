@@ -1,12 +1,36 @@
 import { chromium } from "playwright";
+import dotenv from "dotenv";
+import User from "./src/user.js";
+import Game from "./src/game.js";
+import logger from "./src/logger.js";
 
-const USERNAME = "your.email@here.example";
-const PASSWORD = "yourPassHere";
+dotenv.config();
+
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
+const CHARACTER_NAME = process.env.CHARACTER_NAME;
+
+let user = new User(EMAIL, PASSWORD);
+
+logger.info("Getting session");
+await user.getSession();
+logger.info("Getting characters");
+await user.getCharacters();
+// logger.info(user.characters);
+
+let game = new Game(user.sessionCookie, user.userId);
+logger.info("Getting characters");
+
+const targetCharacterId = user.characters[CHARACTER_NAME]["id"];
+const targetCharacterName = user.characters[CHARACTER_NAME]["name"];
+
+logger.info(`${targetCharacterName}`);
+logger.info("start");
 
 (async () => {
   const opts = {
     // change here
-    headless: false,
+    headless: true,
   };
   const browser = await chromium.launch(opts);
   const context = await browser.newContext();
@@ -14,6 +38,7 @@ const PASSWORD = "yourPassHere";
   //
   // Auth
   //
+  logger.info("Auth");
   const page = await context.newPage();
   await page.goto("https://adventure.land/");
   await sleep(5);
@@ -21,7 +46,7 @@ const PASSWORD = "yourPassHere";
     "$('#loginbuttons').hide(); $('#loginlogin').show(); on_resize()"
   );
   await sleep(2);
-  await page.fill("#email2", USERNAME);
+  await page.fill("#email2", EMAIL);
   await page.fill("#password2", PASSWORD);
   await page.evaluate(
     "api_call_l('signup_or_login',{email:$('#email2').val(),password:$('#password2').val(),only_login:true},{disable:$(this)})"
@@ -39,11 +64,11 @@ const PASSWORD = "yourPassHere";
   let characters = [
     {
       name: "yourcharname",
-      loginJS:
-        "if(!observe_character('yourcharname')) log_in(user_id,'0000000000000000',user_auth)",
+      loginJS: `if(!observe_character('${targetCharacterName}')) log_in(user_id,${targetCharacterId},user_auth)`,
     },
   ];
 
+  logger.info("Login");
   for (const char of characters) {
     const page = await context.newPage();
     await page.goto("https://adventure.land/");
