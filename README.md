@@ -38,8 +38,8 @@ Discord is the place where you can find most of the active players, it's also th
 
 ### Terminal clients
 
-| Bots                                                                              | Personal opinion               |
-| --------------------------------------------------------------------------------- | ------------------------------ |
+| Bots                                                                              |        Personal opinion        |
+| --------------------------------------------------------------------------------- | :----------------------------: |
 | [NexusNull - ALBot](https://github.com/NexusNull/ALBot/tree/master/)              | :star::star::star::star::star: |
 | [earthiverse - ALBot](https://github.com/earthiverse/ALClient/)                   | :star::star::star::star::star: |
 | [earthiverse - ALBot](https://github.com/earthiverse/adventureland-bots/tree/cli) | :star::star::star::star::star: |
