@@ -1,7 +1,7 @@
 import Server from "./server.js";
 
 export default class Character extends Server {
-  constructor(characterId, userId, sessionCookie) {
+  constructor(characterId, userId, sessionCookie, serverData) {
     super(serverData);
     this.characterId = characterId;
     this.userId = userId;
