@@ -1,4 +1,4 @@
-# adventure-land
+# Adventure Land Bots
 
 Scripts and such to https://adventure.land in game usage
 
@@ -6,7 +6,7 @@ Scripts and such to https://adventure.land in game usage
 - [ ] Activate/Deactivate code from terminal
 - [ ] Post code
 - [ ] Serve from GitHub pages
-- [ ] Ability to run on a headless computer as Raspberry Pi
+- [ ] Ability to run on a headless computer like Raspberry Pi
 
 ## Game guide
 
