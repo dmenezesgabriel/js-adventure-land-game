@@ -75,8 +75,10 @@ logger.info("start");
     await sleep(5);
     await page.evaluate(char.loginJS); // select character
     await sleep(5);
+    logger.info("Escape");
     await page.press("body", "Escape"); // close menu
     await sleep(1);
+    logger.info("Backslash - Running CODE");
     await page.press("body", "Backslash"); // run code
     await sleep(3600);
   }
