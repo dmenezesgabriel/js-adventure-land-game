@@ -22,19 +22,12 @@ export default class Character {
       secure: true,
       transports: ["websocket"],
     });
-    let socket = this.socket;
     let lasttime = new Date().getTime();
-    // let original_onevent = socket.onevent;
 
-    // socket.onevent = function (packet) {
-    //   console.log("INCOMING", JSON.stringify(arguments) + " " + new Date());
-    //   original_onevent.apply(socket, arguments);
-    // };
-
-    socket.on("welcome", (data) => {
+    this.socket.on("welcome", (data) => {
       console.log("Socket loading");
       // Send a response that we're ready to go
-      socket.emit("loaded", {
+      this.socket.emit("loaded", {
         success: 1,
         width: 1366,
         height: 768,
@@ -43,10 +36,10 @@ export default class Character {
     });
 
     // When we're loaded, authenticate
-    socket.on("welcome", (data) => {
+    this.socket.on("welcome", (data) => {
       console.log("Socket Authentication");
 
-      socket.emit("auth", {
+      this.socket.emit("auth", {
         auth: this.sessionCookie,
         character: this.characterId,
         height: 768,
@@ -60,25 +53,25 @@ export default class Character {
       });
     });
 
-    socket.on("*", function (event, data) {
+    this.socket.on("*", function (event, data) {
       console.log(event);
       console.log(data);
     });
 
-    socket.on("ping_ack", function () {
+    this.socket.on("ping_ack", function () {
       console.log("Ping acknowledged.");
     });
 
-    socket.on("requesting_ack", () => {
+    this.socket.on("requesting_ack", () => {
       console.log("Request acknowledged.");
-      socket.emit("requested_ack", {});
+      this.socket.emit("requested_ack", {});
     });
 
-    socket.on("connect", () => {
+    this.socket.on("connect", () => {
       console.log("Connected to server.");
     });
 
-    socket.on("disconnect", () => {
+    this.socket.on("disconnect", () => {
       console.log(
         `Disconnected from server after ${
           Math.floor(new Date().getTime() - lasttime) / 1000
@@ -92,7 +85,7 @@ export default class Character {
 
     setInterval(() => {
       console.log("Pinged.");
-      socket.emit("ping_trig", {});
+      this.socket.emit("ping_trig", {});
     }, 1000 * 30);
 
     // Send Heartbeat
