@@ -19,7 +19,6 @@ await user.getCharacters();
 // logger.info(user.characters);
 
 let game = new Game(user.sessionCookie, user.userId);
-logger.info("Getting characters");
 
 const targetCharacterId = user.characters[CHARACTER_NAME]["id"];
 const targetCharacterName = user.characters[CHARACTER_NAME]["name"];
@@ -27,7 +26,7 @@ const targetCharacterName = user.characters[CHARACTER_NAME]["name"];
 logger.info(`${targetCharacterName}`);
 logger.info("start");
 
-(async () => {
+async function main() {
   const opts = {
     // change here
     headless: true,
@@ -60,7 +59,7 @@ logger.info("start");
   //
   // Run
   //
-  // NOTE: the loginJS can be extracted from the DOM of the browser.
+  // The loginJS can be extracted from the DOM of the browser.
   let characters = [
     {
       name: "yourcharname",
@@ -82,9 +81,11 @@ logger.info("start");
     await page.press("body", "Backslash"); // run code
     await sleep(3600);
   }
-})();
+}
 
 function sleep(seconds) {
   const ms = seconds * 1000;
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+main();

@@ -21,7 +21,7 @@ export default class User {
 
   async getSession() {
     // Login and save the auth
-    logger.info(`Logging in`);
+    logger.info(`Logging In`);
     const loginResponse = await httpWrapper.post(
       "signup_or_login",
       `method=signup_or_login&arguments={"email":"${this.email}","password":"${this.password}","only_login":true}`

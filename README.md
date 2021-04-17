@@ -29,6 +29,11 @@ Discord is the place where you can find most of the active players, it's also th
 
 - [Discord Server](https://discord.gg/5Erz7XA)
 
+### Guides
+
+- [Sin's Guide to life in Adventure Land](https://steamcommunity.com/sharedfiles/filedetails/?id=1636142608)
+- [FAQ's by Trexnamedtom](https://steamcommunity.com/sharedfiles/filedetails/?id=1640326394)
+
 ### Considerations
 
 - Not different of most RPGs _mages_ and _warriors_ are the easiest `classes` to start;
@@ -38,11 +43,11 @@ Discord is the place where you can find most of the active players, it's also th
 
 ### Terminal clients
 
-| Bots                                                                              |        Personal opinion        |
-| --------------------------------------------------------------------------------- | :----------------------------: |
-| [NexusNull - ALBot](https://github.com/NexusNull/ALBot/tree/master/)              | :star::star::star::star::star: |
-| [earthiverse - ALBot](https://github.com/earthiverse/ALClient/)                   | :star::star::star::star::star: |
-| [earthiverse - ALBot](https://github.com/earthiverse/adventureland-bots/tree/cli) | :star::star::star::star::star: |
+| Bots                                                                             |        Personal opinion        |
+| -------------------------------------------------------------------------------- | :----------------------------: |
+| [NexusNull - ALBot](https://github.com/NexusNull/ALBot/tree/master/)             | :star::star::star::star::star: |
+| [earthiverse - Client](https://github.com/earthiverse/ALClient/)                 | :star::star::star::star::star: |
+| [earthiverse - Bots](https://github.com/earthiverse/adventureland-bots/tree/cli) | :star::star::star::star::star: |
 
 ### Docs
 
@@ -52,3 +57,4 @@ Discord is the place where you can find most of the active players, it's also th
 
 - [Nice docs found on Reddit](https://docs.google.com/document/d/18xG9NaO1mm7cSx7wMIQEtrkGzFHo6WrEE_TZcbeAFnA/edit)
 - [Journey Over’s codes](https://github.com/JourneyOver/Adventure_Land_Codes)
+- [johnnyawesome GitHub's page](https://github.com/johnnyawesome/Adventure.Land/)
