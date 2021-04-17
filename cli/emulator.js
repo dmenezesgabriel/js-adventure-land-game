@@ -8,25 +8,14 @@ dotenv.config();
 
 const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
-const CHARACTER_NAME = process.env.CHARACTER_NAME;
 
 let user = new User(EMAIL, PASSWORD);
-
 logger.info("Getting session");
 await user.getSession();
-logger.info("Getting characters");
 await user.getCharacters();
-// logger.info(user.characters);
 
-let game = new Game(user.sessionCookie, user.userId);
-
-const targetCharacterId = user.characters[CHARACTER_NAME]["id"];
-const targetCharacterName = user.characters[CHARACTER_NAME]["name"];
-
-logger.info(`${targetCharacterName}`);
-logger.info("start");
-
-async function main() {
+async function runCharacter(targetCharacterId, targetCharacterName) {
+  logger.info(`Starting ${targetCharacterName}`);
   const opts = {
     // change here
     headless: true,
@@ -59,7 +48,7 @@ async function main() {
   //
   // Run
   //
-  // The loginJS can be extracted from the DOM of the browser.
+  // NOTE: the loginJS can be extracted from the DOM of the browser.
   let characters = [
     {
       name: "yourcharname",
@@ -86,6 +75,14 @@ async function main() {
 function sleep(seconds) {
   const ms = seconds * 1000;
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function main() {
+  for (let character in user.characters) {
+    let targetCharacterId = user.characters[character]["id"];
+    let targetCharacterName = user.characters[character]["name"];
+    runCharacter(targetCharacterId, targetCharacterName);
+  }
 }
 
 main();
