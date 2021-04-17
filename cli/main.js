@@ -18,12 +18,10 @@ logger.info("Getting session");
 await user.getSession();
 logger.info("Getting characters");
 await user.getCharacters();
-// console.log(user.characters);
 
 let game = new Game(user.sessionCookie, user.userId);
 logger.info("Getting characters");
 await game.getServers();
-// console.log(game.servers);
 
 const targetServer = game.servers[TARGET_SERVER_IDENTIFICATOR];
 const targetCharacter = user.characters[CHARACTER_NAME]["id"];
@@ -38,5 +36,17 @@ let character = new Character(
   userId,
   sessionCookie
 );
+
+//  Handle CTRL + C exit
+process.on("SIGINT", function () {
+  await character.disconnect();
+});
+
 logger.info("Connecting character");
-character.connect();
+try {
+  // vincula o recurso
+  await character.connect();
+  logger.info("Character connected successfully");
+} catch (error) {
+  logger.error(`Error: ${error}`);
+}

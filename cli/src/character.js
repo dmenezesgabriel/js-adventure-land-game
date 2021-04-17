@@ -1,6 +1,6 @@
-//  Todo figure it out how to use Sockets
-
 import socketio from "socket.io-client";
+import logger from "./logger.js";
+
 export default class Character {
   pingNum = 1;
 
@@ -16,8 +16,8 @@ export default class Character {
   }
 
   async connect() {
-    console.debug(`Connecting to ${this.serverRegion}:${this.serverName}...`);
-    console.debug(`Connecting to ${this.serverAddr}:${this.serverPort}...`);
+    logger.info(`Connecting to ${this.serverRegion}:${this.serverName}...`);
+    logger.info(`Connecting to ${this.serverAddr}:${this.serverPort}...`);
     this.socket = socketio(`wss://${this.serverAddr}:${this.serverPort}`, {
       secure: true,
       transports: ["websocket"],
@@ -25,7 +25,7 @@ export default class Character {
     let lasttime = new Date().getTime();
 
     this.socket.on("welcome", (data) => {
-      console.log("Socket loading");
+      logger.info("Socket loading");
       // Send a response that we're ready to go
       this.socket.emit("loaded", {
         success: 1,
@@ -37,7 +37,7 @@ export default class Character {
 
     // When we're loaded, authenticate
     this.socket.on("welcome", (data) => {
-      console.log("Socket Authentication");
+      logger.info("Socket Authentication");
 
       this.socket.emit("auth", {
         auth: this.sessionCookie,
@@ -53,38 +53,59 @@ export default class Character {
       });
     });
 
+    // Run code
+    this.socket.on("welcome", (data) => {
+      logger.info("Running CODE");
+      // Send a response that we're ready to go
+      this.socket.emit("code", {
+        run: 1,
+      });
+    });
+
     this.socket.on("*", function (event, data) {
-      console.log(event);
-      console.log(data);
+      logger.info(event);
+      logger.info(data);
     });
 
     this.socket.on("ping_ack", function () {
-      console.log("Ping acknowledged.");
+      logger.info("Ping acknowledged.");
     });
 
     this.socket.on("requesting_ack", () => {
-      console.log("Request acknowledged.");
+      logger.info("Request acknowledged.");
       this.socket.emit("requested_ack", {});
     });
 
     this.socket.on("connect", () => {
-      console.log("Connected to server.");
+      logger.info("Connected to server.");
     });
 
     this.socket.on("disconnect", () => {
-      console.log(
+      logger.info(
         `Disconnected from server after ${
           Math.floor(new Date().getTime() - lasttime) / 1000
         } seconds.`
       );
     });
 
+    // this.socket.on("action", function (data) {
+    //   logger.info(data);
+    // });
+
+    // this.socket.on("hit", function (data) {
+    //   logger.info(data);
+    // });
+
+    // this.socket.on("player", function (data) {
+    //   logger.info(data);
+    // });
+
     setInterval(() => {
-      console.log("One minute has passed.");
+      logger.info("One minute has passed.");
     }, 1000 * 60);
 
     setInterval(() => {
-      console.log("Pinged.");
+      logger.info("Pinged.");
       this.socket.emit("ping_trig", {});
     }, 1000 * 30);
 
@@ -95,14 +116,14 @@ export default class Character {
       this.pingNum++;
 
       // Get the ping
-      console.log(`Sending Ping ${this.pingNum}`);
+      logger.info(`Sending Ping ${this.pingNum}`);
       this.socket.emit("ping_trig", { id: pingID });
       return pingID;
     }, 1000 * 3);
   }
 
   async disconnect() {
-    console.debug(
+    logger.info(
       `Disconnecting from ${this.serverRegion}:${this.serverName}...`
     );
     this.socket.close();

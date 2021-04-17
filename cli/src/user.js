@@ -1,4 +1,5 @@
 import httpWrapper from "./httpWrapper.js";
+import logger from "./logger.js";
 
 // Auth
 export default class User {
@@ -20,7 +21,7 @@ export default class User {
 
   async getSession() {
     // Login and save the auth
-    console.info(`Logging in on behalf of ${this.email} ...`);
+    console.info(`Logging in`);
     const loginResponse = await httpWrapper.post(
       "signup_or_login",
       `method=signup_or_login&arguments={"email":"${this.email}","password":"${this.password}","only_login":true}`
@@ -35,7 +36,7 @@ export default class User {
     }
     // Check if login was successful
     if (loginMessage && loginMessage.message == "Logged In!") {
-      console.debug(loginMessage.message);
+      logger.info(loginMessage.message);
       for (const cookie of loginResponse.headers["set-cookie"]) {
         const result = /^auth=(.+?);/.exec(cookie);
         if (result) {
