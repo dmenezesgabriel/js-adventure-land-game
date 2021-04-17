@@ -7,7 +7,8 @@
  */
 
 // URL to fetch code from
-const URL = "";
+const URL =
+  "https://dmenezesgabriel.github.io/adventure-land/scripts/general.js";
 
 const script = document.createElement("script");
 script.src = URL;
