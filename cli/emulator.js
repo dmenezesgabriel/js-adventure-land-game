@@ -1,7 +1,6 @@
 import { chromium } from "playwright";
 import dotenv from "dotenv";
 import User from "./src/user.js";
-import Game from "./src/game.js";
 import logger from "./src/logger.js";
 
 dotenv.config();
