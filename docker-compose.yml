@@ -3,7 +3,7 @@ services:
   adventure-cli:
     build:
       context: ./cli
-      dockerfile: Dockerfile
+      dockerfile: ${DOCKER_FILE:-Dockerfile}
     stdin_open: true # docker run -i
     tty: true # docker run -t
     command: /bin/sh
