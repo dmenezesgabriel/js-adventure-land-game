@@ -12,6 +12,11 @@ const PASSWORD = process.env.PASSWORD;
 const CHARACTER_NAME = process.env.CHARACTER_NAME;
 const TARGET_SERVER_IDENTIFICATOR = process.env.TARGET_SERVER_IDENTIFICATOR;
 
+function sleep(seconds) {
+  const ms = seconds * 1000;
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 let user = new User(EMAIL, PASSWORD);
 
 logger.info("Getting session");
@@ -24,9 +29,9 @@ logger.info("Getting characters");
 await game.getServers();
 
 const targetServer = game.servers[TARGET_SERVER_IDENTIFICATOR];
-const targetCharacter = user.characters[CHARACTER_NAME]["id"];
 const userId = user.userId;
 const sessionCookie = user.sessionCookie;
+const targetCharacter = user.characters[CHARACTER_NAME];
 
 logger.info("Connecting character");
 
@@ -38,8 +43,10 @@ let character = new Character(
 );
 
 //  Handle CTRL + C exit
-process.on("SIGINT", function () {
+process.on("SIGINT", async () => {
   await character.disconnect();
+  sleep(3);
+  process.exit();
 });
 
 logger.info("Connecting character");

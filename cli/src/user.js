@@ -21,7 +21,7 @@ export default class User {
 
   async getSession() {
     // Login and save the auth
-    console.info(`Logging in`);
+    logger.info(`Logging in`);
     const loginResponse = await httpWrapper.post(
       "signup_or_login",
       `method=signup_or_login&arguments={"email":"${this.email}","password":"${this.password}","only_login":true}`
@@ -59,7 +59,7 @@ export default class User {
 
   async getCharacters() {
     if (!this.userId) return Promise.reject("You must login first.");
-    console.info(`Getting Characters`);
+    logger.info(`Getting Characters`);
     const charactersResponse = await httpWrapper.post(
       "servers_and_characters",
       "method=servers_and_characters&arguments={}",

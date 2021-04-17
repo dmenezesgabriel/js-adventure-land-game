@@ -1,4 +1,5 @@
 import httpWrapper from "./httpWrapper.js";
+import logger from "./logger.js";
 
 export default class Game {
   constructor(sessionCookie, userId) {
@@ -9,7 +10,7 @@ export default class Game {
 
   async getServers() {
     if (!this.userId) return Promise.reject("You must login first.");
-    console.info(`Getting Servers`);
+    logger.info(`Getting Servers`);
     const serversResponse = await httpWrapper.post(
       "servers_and_characters",
       "method=servers_and_characters&arguments={}",

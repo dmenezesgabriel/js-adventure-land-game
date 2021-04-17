@@ -4,12 +4,12 @@ import logger from "./logger.js";
 export default class Character {
   pingNum = 1;
 
-  constructor(serverData, characterId, userId, sessionCookie) {
+  constructor(serverData, characterData, userId, sessionCookie) {
     this.serverRegion = serverData.region;
     this.serverName = serverData.name;
     this.serverAddr = serverData.addr;
     this.serverPort = serverData.port;
-    this.characterId = characterId;
+    this.characterId = characterData.id;
     this.userId = userId;
     this.sessionCookie = sessionCookie;
     this.socket = {};
@@ -53,20 +53,6 @@ export default class Character {
       });
     });
 
-    // Run code
-    this.socket.on("welcome", (data) => {
-      logger.info("Running CODE");
-      // Send a response that we're ready to go
-      this.socket.emit("code", {
-        run: 1,
-      });
-    });
-
-    this.socket.on("*", function (event, data) {
-      logger.info(event);
-      logger.info(data);
-    });
-
     this.socket.on("ping_ack", function () {
       logger.info("Ping acknowledged.");
     });
@@ -88,17 +74,9 @@ export default class Character {
       );
     });
 
-    // this.socket.on("action", function (data) {
-    //   logger.info(data);
-    // });
-
-    // this.socket.on("hit", function (data) {
-    //   logger.info(data);
-    // });
-
-    // this.socket.on("player", function (data) {
-    //   logger.info(data);
-    // });
+    this.socket.on("game_log", function (data) {
+      logger.info(`Game log: ${data}`);
+    });
 
     setInterval(() => {
       logger.info("One minute has passed.");
