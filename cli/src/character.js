@@ -53,6 +53,14 @@ export default class Character {
       });
     });
 
+    // this.socket.on("start", (data) => {
+    //   logger.info("Socket Start");
+
+    //   this.socket.emit("code", {
+    //     run: 1,
+    //   });
+    // });
+
     this.socket.on("ping_ack", function () {
       logger.info("Ping acknowledged.");
     });

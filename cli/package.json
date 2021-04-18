@@ -6,6 +6,7 @@
   "author": "Gabriel Menezes dmenezes.gabriel@gmail.com",
   "main": "main.js",
   "scripts": {
+    "browserEmulator": "node browserEmulator.js",
     "emulator": "node emulator.js",
     "main": "node main.js"
   },
