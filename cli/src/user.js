@@ -21,7 +21,7 @@ export default class User {
 
   async getSession() {
     // Login and save the auth
-    logger.info(`Logging In`);
+    logger.info(`Requesting "signup_or_login"`);
     const loginResponse = await httpWrapper.post(
       "signup_or_login",
       `method=signup_or_login&arguments={"email":"${this.email}","password":"${this.password}","only_login":true}`
@@ -36,7 +36,7 @@ export default class User {
     }
     // Check if login was successful
     if (loginMessage && loginMessage.message == "Logged In!") {
-      logger.info(loginMessage.message);
+      logger.info(`signup_or_login method response: ${loginMessage.message}`);
       for (const cookie of loginResponse.headers["set-cookie"]) {
         const result = /^auth=(.+?);/.exec(cookie);
         if (result) {
@@ -48,18 +48,18 @@ export default class User {
       }
     } else if (loginMessage && loginMessage.message) {
       // Login failed, with reason
-      console.error(loginMessage.message);
+      logger.error(`Error at signup_or_login ${loginMessage.message}`);
       return Promise.reject(loginMessage.message);
     } else {
       // Login failed without a reason
-      console.error(loginResponse.data);
+      logger.error(`Error at signup_or_login ${loginResponse.data}`);
       return Promise.reject();
     }
   }
 
   async getCharacters() {
     if (!this.userId) return Promise.reject("You must login first.");
-    logger.info(`Getting Characters`);
+    logger.info(`Requesting servers_and_characters`);
     const charactersResponse = await httpWrapper.post(
       "servers_and_characters",
       "method=servers_and_characters&arguments={}",
@@ -71,7 +71,7 @@ export default class User {
       }
       return Promise.resolve(true);
     } else {
-      console.error(charactersResponse);
+      logger.error(`Error at servers_and_characters: ${charactersResponse}`);
     }
 
     return Promisse.reject("Error fetching characters");
