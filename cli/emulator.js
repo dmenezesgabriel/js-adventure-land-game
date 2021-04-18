@@ -32,6 +32,7 @@ async function runCharacter(targetCharacterId, targetCharacterName) {
   await page.goto("https://adventure.land/");
   logger.info("Sleeping...");
   await sleep(5);
+  logger.info(`${targetCharacterName} - Click login`);
   await page.evaluate(
     "$('#loginbuttons').hide(); $('#loginlogin').show(); on_resize()"
   );
