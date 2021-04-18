@@ -57,7 +57,7 @@ async function runCharacter(targetCharacterId, targetCharacterName) {
   // NOTE: the loginJS can be extracted from the DOM of the browser.
   let characters = [
     {
-      name: "yourcharname",
+      name: `${targetCharacterName}`,
       loginJS: `if(!observe_character('${targetCharacterName}')) log_in(user_id,${targetCharacterId},user_auth)`,
     },
   ];
