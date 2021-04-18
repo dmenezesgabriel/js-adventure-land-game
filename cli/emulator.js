@@ -7,12 +7,14 @@ dotenv.config();
 
 const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
+const CHARACTERS = process.env.CHARACTERS.split(" ");
 
 let user = new User(EMAIL, PASSWORD);
 logger.info("Getting session");
 await user.getSession();
 await user.getCharacters();
 
+// Deploy character
 async function runCharacter(targetCharacterId, targetCharacterName) {
   logger.info(`Starting ${targetCharacterName}`);
   const opts = {
@@ -25,21 +27,26 @@ async function runCharacter(targetCharacterId, targetCharacterName) {
   //
   // Auth
   //
-  logger.info("Auth");
+  logger.info(`${targetCharacterName} - Auth`);
   const page = await context.newPage();
   await page.goto("https://adventure.land/");
+  logger.info("Sleeping...");
   await sleep(5);
   await page.evaluate(
     "$('#loginbuttons').hide(); $('#loginlogin').show(); on_resize()"
   );
+  logger.info("Sleeping...");
   await sleep(2);
   await page.fill("#email2", EMAIL);
   await page.fill("#password2", PASSWORD);
   await page.evaluate(
     "api_call_l('signup_or_login',{email:$('#email2').val(),password:$('#password2').val(),only_login:true},{disable:$(this)})"
   );
+  logger.info("Sleeping...");
   await sleep(2);
+
   (async () => {
+    logger.info("Sleeping...");
     await sleep(5);
     page.close();
   })();
@@ -55,18 +62,22 @@ async function runCharacter(targetCharacterId, targetCharacterName) {
     },
   ];
 
-  logger.info("Login");
+  logger.info(`${targetCharacterName} - Login`);
   for (const char of characters) {
     const page = await context.newPage();
     await page.goto("https://adventure.land/");
+    logger.info("Sleeping...");
     await sleep(5);
     await page.evaluate(char.loginJS); // select character
+    logger.info("Sleeping...");
     await sleep(5);
-    logger.info("Escape");
+    logger.info(`${targetCharacterName} - Escape`);
     await page.press("body", "Escape"); // close menu
+    logger.info("Sleeping...");
     await sleep(1);
-    logger.info("Backslash - Running CODE");
+    logger.info(`${targetCharacterName} - Backslash - Running CODE`);
     await page.press("body", "Backslash"); // run code
+    logger.info("Sleeping...");
     await sleep(3600);
   }
 }
@@ -77,10 +88,16 @@ function sleep(seconds) {
 }
 
 async function main() {
+  logger.info(`Deploy characters: ${CHARACTERS}`);
   for (let character in user.characters) {
     let targetCharacterId = user.characters[character]["id"];
     let targetCharacterName = user.characters[character]["name"];
-    runCharacter(targetCharacterId, targetCharacterName);
+
+    //  Check if character should be deployed
+    if (CHARACTERS.includes(targetCharacterName)) {
+      logger.info(`Deploy ${targetCharacterName}`);
+      runCharacter(targetCharacterId, targetCharacterName);
+    }
   }
 }
 
