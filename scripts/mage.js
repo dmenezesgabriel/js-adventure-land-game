@@ -1,6 +1,6 @@
-var reviving = false;
+var reviving = true;
 var targetMonster = "goo";
-var fighting = false;
+var fighting = true;
 
 if (character.rip) {
   setTimeout(function () {
