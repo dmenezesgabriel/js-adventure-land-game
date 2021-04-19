@@ -7,8 +7,5 @@ run-sh:
 run:
 	docker-compose run --rm adventure-cli npm run main
 
-web:
-	docker-compose run --rm adventure-cli npm run browserEmulator
-
 emulator:
 	docker-compose run --rm adventure-cli npm run emulator
