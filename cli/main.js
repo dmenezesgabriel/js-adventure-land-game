@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import User from "./src/user.js";
 import Game from "./src/game.js";
 import logger from "./src/logger.js";
+import EventsListener from "./src/eventsListener.js";
 import Character from "./src/character.js";
 
 logger.info("Hello Adventurer");
@@ -33,27 +34,44 @@ const userId = user.userId;
 const sessionCookie = user.sessionCookie;
 const targetCharacter = user.characters[CHARACTER_NAME];
 
-logger.info("Connecting character");
+// logger.info("Connecting character");
 
-let character = new Character(
-  targetServer,
-  targetCharacter,
-  userId,
-  sessionCookie
-);
+// let character = new Character(
+//   targetServer,
+//   targetCharacter,
+//   userId,
+//   sessionCookie
+// );
 
+// //  Handle CTRL + C exit
+// process.on("SIGINT", async () => {
+//   await character.disconnect();
+//   sleep(3);
+//   process.exit();
+// });
+
+// logger.info("Connecting character");
+// try {
+//   // vincula o recurso
+//   await character.connect();
+//   logger.info("Character connected successfully");
+// } catch (error) {
+//   logger.error(`Error: ${error}`);
+// }
+
+let eventsListener = new EventsListener(targetServer);
 //  Handle CTRL + C exit
 process.on("SIGINT", async () => {
-  await character.disconnect();
+  await eventsListener.disconnect();
   sleep(3);
   process.exit();
 });
 
-logger.info("Connecting character");
+logger.info("Connecting eventListener");
 try {
   // vincula o recurso
-  await character.connect();
-  logger.info("Character connected successfully");
+  await eventsListener.connect();
+  logger.info("eventsListener connected successfully");
 } catch (error) {
   logger.error(`Error: ${error}`);
 }
