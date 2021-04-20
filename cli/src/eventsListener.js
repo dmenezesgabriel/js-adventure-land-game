@@ -32,6 +32,14 @@ export default class EventsListener {
       });
     });
 
+    this.socket.on("entities", (data) => {
+      for (const player of data.players) {
+        if ((player.id = "ThorinWise")) {
+          console.log(data);
+        }
+      }
+    });
+
     //  Sanity checks
     this.socket.on("ping_ack", function () {
       logger.info("Ping acknowledged.");

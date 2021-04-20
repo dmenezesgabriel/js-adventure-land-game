@@ -52,7 +52,6 @@ const targetCharacter = user.characters[CHARACTER_NAME];
 
 // logger.info("Connecting character");
 // try {
-//   // vincula o recurso
 //   await character.connect();
 //   logger.info("Character connected successfully");
 // } catch (error) {
