@@ -1,5 +1,0 @@
-*.env
-node_modules
-npm-debug.log
-*.log
-temp.js
