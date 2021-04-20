@@ -1,12 +1,6 @@
-# Adventure Land Bots
+# Adventure Land Journey
 
-Scripts and such to https://adventure.land in game usage
-
-- [ ] Deploy characters
-- [ ] Activate/Deactivate code from terminal
-- [ ] Post code
-- [ ] Serve from GitHub pages
-- [ ] Ability to run on a headless computer like Raspberry Pi
+My Journey through this adventure world.
 
 ## Game guide
 
@@ -17,7 +11,7 @@ Scripts and such to https://adventure.land in game usage
 3. At the game start, it will be asked for you to register
 4. Now you can login in all clients even in the browser
 
-### Clients
+### Official Clients
 
 - [Browser](https://adventure.land/)
 - [Browser - Companion](https://adventure.land/comm)
@@ -31,6 +25,7 @@ Discord is the place where you can find most of the active players, it's also th
 
 ### Guides
 
+- [Nice docs found on Reddit](https://docs.google.com/document/d/18xG9NaO1mm7cSx7wMIQEtrkGzFHo6WrEE_TZcbeAFnA/edit)
 - [Sin's Guide to life in Adventure Land](https://steamcommunity.com/sharedfiles/filedetails/?id=1636142608)
 - [FAQ's by Trexnamedtom](https://steamcommunity.com/sharedfiles/filedetails/?id=1640326394)
 
@@ -41,21 +36,18 @@ Discord is the place where you can find most of the active players, it's also th
 - Do the beginner Tutorial at the start of the game;
 - You can also serve your code via `Gitub Pages`
 
-### Terminal clients
+### Comunity Terminal clients
 
-| Bots                                                                             |        Personal opinion        |
-| -------------------------------------------------------------------------------- | :----------------------------: |
-| [NexusNull - ALBot](https://github.com/NexusNull/ALBot/tree/master/)             | :star::star::star::star::star: |
-| [earthiverse - Client](https://github.com/earthiverse/ALClient/)                 | :star::star::star::star::star: |
-| [earthiverse - Bots](https://github.com/earthiverse/adventureland-bots/tree/cli) | :star::star::star::star::star: |
+- [NexusNull - ALBot](https://github.com/NexusNull/ALBot/tree/master/)
+- [earthiverse - Client](https://github.com/earthiverse/ALClient/)
+- [earthiverse - Bots](https://github.com/earthiverse/adventureland-bots/tree/cli)
 
-### Docs
+### Official Developer's GitHub
 
 - [Developer Github](https://github.com/kaansoral/adventureland)
 
-## References
+## Repositories to base your scripts
 
-- [Nice docs found on Reddit](https://docs.google.com/document/d/18xG9NaO1mm7cSx7wMIQEtrkGzFHo6WrEE_TZcbeAFnA/edit)
 - [Journey Over’s codes](https://github.com/JourneyOver/Adventure_Land_Codes)
 - [johnnyawesome GitHub's page](https://github.com/johnnyawesome/Adventure.Land/)
 - [pwfisher Github's page](https://github.com/pwfisher/adventureland)
