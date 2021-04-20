@@ -2,6 +2,11 @@
 
 My Journey through this adventure world.
 
+## My bots automation's
+
+- [JavaScript](https://github.com/dmenezesgabriel/adventure-land-cli-js)
+- Python (coming soon)
+
 ## Game guide
 
 ### Siginup
