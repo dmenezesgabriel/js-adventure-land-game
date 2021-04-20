@@ -1,5 +1,5 @@
 var reviving = false;
-var targetMonster = "goo";
+var targetMonster = "crab";
 var fighting = false;
 
 if (character.rip) {
