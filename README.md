@@ -58,3 +58,4 @@ Discord is the place where you can find most of the active players, it's also th
 - [pwfisher Github's page](https://github.com/pwfisher/adventureland)
 - [sichi GitHub's page](https://github.com/Sichii/AdventureLand-Bot)
 - [saevarb GitHub's page](https://github.com/saevarb/adventureland-typescript-starter)
+- [devinadams GitHub's page](https://github.com/devinadams/adventureland)
