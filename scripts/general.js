@@ -77,7 +77,7 @@ function farm() {
       if (can_attack(target)) {
         attack(target);
         logCharacter(
-          `Attacking id: ${target.id} name :${target.name} hp: ${target.hp}`
+          `Attacking id: ${target.id} name :${target.name} hp: ${target.hp}/${target.max_hp}`
         );
       }
     } else {
