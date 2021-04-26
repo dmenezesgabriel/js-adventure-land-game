@@ -5,6 +5,7 @@ My Journey through this adventure world.
 ## My bots automation's
 
 - [JavaScript](https://github.com/dmenezesgabriel/adventure-land-cli-js)
+- [scripts](https://github.com/dmenezesgabriel/adventure-land-journey)
 - Python (coming soon)
 
 ## Game guide
