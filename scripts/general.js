@@ -1,7 +1,7 @@
 //Put monsters you want to kill in here
 //If your character has no target, it will travel to a spawn of the first monster in the list below.
 var group = ["BjornOak", "ThorinWise", "GloinWise"];
-var monster_targets = ["crab"];
+var monster_targets = ["bee"];
 
 var state = "farm";
 
