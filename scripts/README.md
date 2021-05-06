@@ -10,6 +10,7 @@
 - [ ] Clean code
 - [ ] Improve logs
 - [ ] All classes script
+- [ ] Use Skills
 
 ## References
 
