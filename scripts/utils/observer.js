@@ -1,11 +1,12 @@
 class Observer {
   // Log character events
-  constructor(character) {
-    character.all(function (name, data) {
+  constructor(obj) {
+    obj.all(function (name, data) {
       data.event_name = name;
-      console.log(data);
+      console.log(JSON.stringify(data));
     });
   }
 }
 
-const observer = new Observer(character);
+const characterObserver = new Observer(character);
+// const gameObserver = new Observer(game);

@@ -10,12 +10,6 @@ var potion_types = ["hpot0", "mpot0"]; //The types of potions to keep supplied.
 var should_heal_hp = 0.5;
 var should_heal_mp = 0.5;
 
-// Log to console character name following by message
-function logCharacter(message) {
-  console.log(`${character.name} - ${message}`);
-  game_log(`${character.name} - ${message}`);
-}
-
 //Movement And Attacking
 setInterval(function () {
   //Determine what state we should be in.
@@ -41,7 +35,7 @@ setInterval(function () {
     character.hp / character.max_hp < should_heal_hp ||
     character.mp / character.max_mp < should_heal_mp
   ) {
-    logCharacter("Using healing potion");
+    game_log("Using healing potion");
     use_hp_or_mp();
   }
 }, 500); //Execute 2 times per second
@@ -57,7 +51,7 @@ function state_controller() {
     var num_potions = num_items(type);
 
     if (num_potions < min_potions) {
-      logCharacter("Setting new state to resupply potions");
+      game_log("Setting new state to resupply potions");
       new_state = "resupply_potions";
       break;
     }
@@ -76,13 +70,14 @@ function farm() {
     if (distance_to_point(target.real_x, target.real_y) < character.range) {
       if (can_attack(target)) {
         attack(target);
+        game_log(target);
       }
     } else {
       move_to_target(target);
     }
   } else {
     if (!smart.moving) {
-      logCharacter("Finding a target");
+      game_log("Finding a target");
       smart_move({ to: monster_targets[0] });
     }
   }
@@ -131,12 +126,12 @@ function buy_potions() {
             buy(type, purchase_amount);
           }
         } else {
-          logCharacter("Not Enough Gold!");
+          game_log("Not Enough Gold!");
         }
       }
     }
   } else {
-    logCharacter("Inventory Full!");
+    game_log("Inventory Full!");
   }
 }
 

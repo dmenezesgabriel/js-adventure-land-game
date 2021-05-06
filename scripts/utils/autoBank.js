@@ -3,7 +3,7 @@ var maxGold = 1000000;
 
 var bankItems = {
   //ItemID: {bank: banktabID, level: min level, quantity: min quantity}
-  seashell: { bank: "items1", level: -1, quantity: 1 },
+  seashell: { bank: "items1", level: -1, quantity: 200 },
 };
 
 var lastStore;

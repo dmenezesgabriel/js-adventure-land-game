@@ -15,3 +15,4 @@
 ## References
 
 - [Official event docs](http://adventure.land/docs/code/character/events)
+- [Spadar GitHub's page](https://github.com/Spadar/AdventureLand)
