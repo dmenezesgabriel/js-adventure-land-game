@@ -1,4 +1,4 @@
-var group = ["", ""];
+var group = ["BjornOak", "ThorinWise", "GloinWise"];
 
 setInterval(function () {
   if (character.name == group[0]) {

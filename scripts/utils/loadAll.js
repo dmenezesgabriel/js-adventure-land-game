@@ -10,6 +10,7 @@
 const urlList = [
   "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/general.js",
   "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/utils/observer.js",
+  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/utils/autoParty.js",
 ];
 
 urlList.forEach((url) => {
