@@ -1,7 +1,8 @@
 ## TODO
 
-- [x] Auto party
-- [x] Resupply potions
+- [x] Auto Party
+- [x] Resupply Potions
+- [x] Character Observer
 - [ ] Auto banking
 - [ ] Kiting monsters in circles
 - [ ] Improving monsters targeting
