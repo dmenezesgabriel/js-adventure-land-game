@@ -9,3 +9,7 @@
 - [ ] Clean code
 - [ ] Improve logs
 - [ ] All classes script
+
+## References
+
+- [Official event docs](http://adventure.land/docs/code/character/events)

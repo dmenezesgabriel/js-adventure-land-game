@@ -108,9 +108,6 @@ function farm() {
     if (distance_to_point(target.real_x, target.real_y) < character.range) {
       if (can_attack(target)) {
         attack(target);
-        logCharacter(
-          `Attacking id: ${target.id} name :${target.name} hp: ${target.hp}/${target.max_hp}`
-        );
       }
     } else {
       move_to_target(target);
