@@ -1,0 +1,12 @@
+{
+  "name": "adventure-land-journey",
+  "version": "1.0.0",
+  "description": "Adventure land scripts",
+  "main": "",
+  "repository": "git@github.com:dmenezesgabriel/adventure-land-journey.git",
+  "author": "Gabriel <dmenezes.gabriel@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
+}

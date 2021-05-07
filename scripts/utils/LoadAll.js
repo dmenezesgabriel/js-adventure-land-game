@@ -8,9 +8,9 @@
 
 // urls to fetch code from
 const urlList = [
-  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/general.js",
-  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/utils/observer.js",
-  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/utils/autoParty.js",
+  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/General.js",
+  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/utils/Observer.js",
+  "https://dmenezesgabriel.github.io/adventure-land-journey/scripts/utils/AutoParty.js",
 ];
 
 urlList.forEach((url) => {
