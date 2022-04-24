@@ -1,7 +1,8 @@
 setInterval(function(){
-	game_log("MAking Circles")
-	let target=get_targeted_monster();
+	set_message("Attacking");
+	attack(target);
 
+	var target = get_target();
 	let radius = character.range - 50;
 	let theta = Math.atan2(character.y-target.y, character.x-target.x) + (180/Math.PI);
 	move(
