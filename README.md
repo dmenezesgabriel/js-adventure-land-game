@@ -54,6 +54,7 @@ Discord is the place where you can find most of the active players, it's also th
 
 ## Repositories to base your scripts
 
+- [dcoles GitHub's page](https://github.com/dcoles/adventureland-code)
 - [Spadar GitHub's page](https://github.com/Spadar/AdventureLand)
 - [Journey Over’s codes](https://github.com/JourneyOver/Adventure_Land_Codes)
 - [johnnyawesome GitHub's page](https://github.com/johnnyawesome/Adventure.Land/)
