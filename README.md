@@ -1,15 +1,5 @@
 # Adventure Land Journey
 
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-cli-js&metric=security_rating)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-cli-js)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=code_smells)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=coverage)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=dmenezesgabriel_adventure-land-journey&metric=security_rating)](https://sonarcloud.io/dashboard?id=dmenezesgabriel_adventure-land-journey)
-
 My Journey through this adventure world.
 
 ## My bots automation's
